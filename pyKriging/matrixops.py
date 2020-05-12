@@ -66,6 +66,9 @@ class matrixops():
         self.NegLnLike=-1.*(-(self.n/2.)*np.log(self.SigmaSqr) - 0.5*self.LnDetPsi)
 
     def predict_normalized(self,x):
+	"""
+		Comments!
+	"""
         for i in range(self.n):
             self.psi[i]=np.exp(-np.sum(self.theta*np.power((np.abs(self.X[i]-x)),self.pl)))
         z = self.y-self.one.dot(self.mu)
